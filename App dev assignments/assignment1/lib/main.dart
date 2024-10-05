@@ -18,7 +18,8 @@ class MainApp extends StatelessWidget {
 
     //print(response.body);
     if (response.statusCode == 200) {
-      Map<String,dynamic> jsonResponse = jsonDecode(response.body);
+      // jsonDecode(response.body)  
+      Map<String,dynamic> jsonResponse = jsonDecode(utf8.decode(response.body.codeUnits));
       
       List jsonJobs = jsonResponse['data']; //extracting jobs from jsonResponse 
 
