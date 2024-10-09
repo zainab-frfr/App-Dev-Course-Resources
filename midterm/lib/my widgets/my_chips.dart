@@ -9,20 +9,10 @@ class MyChips extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Wrap(
-      spacing: 8.0, // gap between adjacent chips
+      spacing: 8.0, 
       runSpacing: 4.0,
       children: payloadIds.map((id) => returnChip(id)).toList(),
     );
-    // ListView.builder(
-    //   scrollDirection: Axis.horizontal,
-    //   itemCount: payloadIds.length,
-    //   itemBuilder: (context, index) {
-    //     return Padding(
-    //       padding: const EdgeInsets.all(8.0),
-    //       child: returnChip(payloadIds[index]),
-    //     );
-    //   },
-    // );
   }
 }
 
@@ -35,7 +25,7 @@ Chip returnChip(String payID) {
     elevation: 2,
     padding: const EdgeInsets.all(8),
     backgroundColor:
-        Color((math.Random().nextDouble() * 0xFFFFFF).toInt()).withOpacity(1.0),
+        Color((math.Random().nextDouble() * 0xFFFFFF).toInt()).withOpacity(0.5),
     label: Text(
       payID,
       style: const TextStyle(fontSize: 10),

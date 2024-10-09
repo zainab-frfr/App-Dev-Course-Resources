@@ -27,9 +27,7 @@ class _MyLaunchTileState extends State<MyLaunchTile> {
       child: Material(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         elevation: 4,
-        child: InkWell(
-          onTap: () {},
-          child: Ink(
+        child: Ink(
             padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -77,7 +75,6 @@ class _MyLaunchTileState extends State<MyLaunchTile> {
               ],
             ),
           ),
-        ),
       ),
     );
   }
