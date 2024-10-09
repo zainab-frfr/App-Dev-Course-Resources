@@ -15,7 +15,6 @@ class _MyLaunchTileState extends State<MyLaunchTile> {
   bool _isMorePressed = false;
 
   void morePressed() {
-    print('entered here wuho');
     setState(() {
       _isMorePressed ? _isMorePressed = false : _isMorePressed = true;
     });
@@ -27,7 +26,7 @@ class _MyLaunchTileState extends State<MyLaunchTile> {
       padding: const EdgeInsets.only(top: 10, left: 20, right: 20),
       child: Material(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-        elevation: 1.2,
+        elevation: 4,
         child: InkWell(
           onTap: () {},
           child: Ink(
@@ -70,7 +69,6 @@ class _MyLaunchTileState extends State<MyLaunchTile> {
                 Flexible(
                   child: Container(
                       width: MediaQuery.of(context).size.width * 0.75,
-                      height: 200,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
                       ),
