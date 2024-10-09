@@ -14,7 +14,11 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Space Missions', style: TextStyle(fontWeight: FontWeight.bold),),
+          backgroundColor: const Color.fromARGB(255, 47, 126, 97),
+          title: const Text(
+            'Space Missions',
+            style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+          ),
         ),
         body: const MyHomePage(),
       ),
