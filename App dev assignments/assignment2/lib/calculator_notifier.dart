@@ -114,9 +114,6 @@ class CalculatorNotifier extends ChangeNotifier {
       case '÷':
         _divide();
         break;
-      case '%':
-        _modulo();
-        break;
     }
 
     int decPlacesInresult = _checkNumberOfDecimalPlaces(_result);
@@ -161,13 +158,15 @@ class CalculatorNotifier extends ChangeNotifier {
     }
   }
 
-  void _modulo(){
-    if(_numTwo != 0 ){
-      _result = _numOne % _numTwo;
+  void percentage(){
+    if(_addToNumOne){
+      _numOne = _numOne / 100;
+      numOneDisplay = '$_numOne';
     } else {
-      _reset();
-      _resultToDisplay = "Cannot divide by Zero";
+      _numTwo = _numTwo / 100;
+      numTwoDisplay = '$_numTwo';
     }
+    notifyListeners();
   }
 
   void _reset(){

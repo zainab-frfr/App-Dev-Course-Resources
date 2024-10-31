@@ -97,9 +97,10 @@ class MainApp extends StatelessWidget {
                               : textColors[0],
                       onTap: (index == 0 )? (){clearPressed(context);}
                               :(index ==1 )? (){changeSign(context);}
-                              :(index ==2 || index == 3 || index ==7 || index ==11 || index == 15)? (){operatorPressed(context, text);}
+                              :(index == 3 || index ==7 || index ==11 || index == 15)? (){operatorPressed(context, text);}
                               : ( index == 18)? (){equalPressed(context);}
                               : (index == 17)? (){ addDecimal(context);}
+                              : (index ==2) ? (){percentagePressed(context);}
                               :(){numberPressed(context, text);} ,
 
                     );
@@ -129,6 +130,10 @@ void clearPressed(BuildContext context){
   context.read<CalculatorNotifier>().clearPressed();
 }
 
+void percentagePressed(BuildContext context){
+  context.read<CalculatorNotifier>().percentage();
+}
+
 void changeSign(BuildContext context){
   context.read<CalculatorNotifier>().changeSign();
 }
@@ -136,9 +141,3 @@ void changeSign(BuildContext context){
 void addDecimal(BuildContext context){
   context.read<CalculatorNotifier>().decimalAdded();
 }
-
-/*
-STUFF LEFT: 
-  1. TEXT OVERFLOWS AGR NUMBERS BEFORE DECIMAL INCREASE
-  2. POINT ADDED
-*/
