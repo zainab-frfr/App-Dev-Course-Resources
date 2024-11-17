@@ -29,6 +29,17 @@ class MainApp extends StatelessWidget {
     String numOne = context.watch<CalculatorNotifier>().numOneDisplay;
     String operator = context.watch<CalculatorNotifier>().operation;
     String numTwo = context.watch<CalculatorNotifier>().numTwoDisplay;
+
+    String prevResultDisplay = context.watch<CalculatorNotifier>().prevResultDisplay;
+    String prevNumOneDisplay = context.watch<CalculatorNotifier>().prevNumOneDisplay;
+    String prevNumTwoDisplay = context.watch<CalculatorNotifier>().prevNumTwoDisplay;
+    String prevOperator = context.watch<CalculatorNotifier>().prevOperator;
+
+    String morePrevResultDisplay = context.watch<CalculatorNotifier>().morePrevResultDisplay;
+    String morePrevNumOneDisplay = context.watch<CalculatorNotifier>().morePrevNumOneDisplay;
+    String morePrevNumTwoDisplay = context.watch<CalculatorNotifier>().morePrevNumTwoDisplay;
+    String morePrevOperator = context.watch<CalculatorNotifier>().morePrevOperator;
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -38,6 +49,45 @@ class MainApp extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Expanded( 
+                    child: Align(
+                      alignment: Alignment.centerRight,
+                      child: Text(
+                          (morePrevNumOneDisplay != "" && morePrevNumTwoDisplay != "" && morePrevResultDisplay != "" && morePrevOperator != "")
+                          ?"$morePrevNumOneDisplay $morePrevOperator $morePrevNumTwoDisplay = $morePrevResultDisplay" 
+                          :"",
+                          style: const TextStyle(
+                            fontSize: 15,
+                            color: Color.fromARGB(255, 150, 147, 147)
+                          ),
+                        ),
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Expanded( 
+                    child: Align(
+                      alignment: Alignment.centerRight,
+                      child: Text(
+                          (prevNumOneDisplay != "" && prevNumTwoDisplay != "" && prevResultDisplay != "" && prevOperator != "")
+                          ?"$prevNumOneDisplay $prevOperator $prevNumTwoDisplay = $prevResultDisplay"
+                          :"" ,
+                          style: const TextStyle(
+                            fontSize: 15,
+                            color: Color.fromARGB(255, 150, 147, 147)
+                          ),
+                        ),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 30,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
@@ -55,7 +105,7 @@ class MainApp extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 20,),
+              const SizedBox(height: 10,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [

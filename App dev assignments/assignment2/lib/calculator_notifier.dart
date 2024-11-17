@@ -11,6 +11,17 @@ import 'package:flutter/material.dart';
 
 class CalculatorNotifier extends ChangeNotifier {
 
+  // variables to display history 
+  String prevNumOneDisplay = "";
+  String prevNumTwoDisplay = "";
+  String prevResultDisplay = "";
+  String prevOperator = "";
+
+  String morePrevNumOneDisplay = "";
+  String morePrevNumTwoDisplay = "";
+  String morePrevResultDisplay = "";
+  String morePrevOperator = "";
+
   String numOneDisplay ="";
   String numTwoDisplay = "";
 
@@ -126,7 +137,8 @@ class CalculatorNotifier extends ChangeNotifier {
     else{
       _resultToDisplay = _result.toString();
     }
-
+    _updateHistory();
+    
     numOneDisplay = _resultToDisplay;
     numTwoDisplay = "";
 
@@ -134,6 +146,19 @@ class CalculatorNotifier extends ChangeNotifier {
     _numTwo = 0;
     _addToNumOne = !_addToNumOne;
     _operation = "";
+    notifyListeners();
+  }
+
+  void _updateHistory(){
+    morePrevNumOneDisplay = prevNumOneDisplay;
+    morePrevNumTwoDisplay = prevNumTwoDisplay;
+    morePrevOperator = prevOperator;
+    morePrevResultDisplay = prevResultDisplay;
+
+    prevNumOneDisplay = numOneDisplay;
+    prevNumTwoDisplay = numTwoDisplay;
+    prevOperator = operation;
+    prevResultDisplay = _resultToDisplay;
     notifyListeners();
   }
 
@@ -182,6 +207,14 @@ class CalculatorNotifier extends ChangeNotifier {
     _resultToDisplay = "";
     numOneDisplay = "";
     numTwoDisplay = "";
+    prevNumOneDisplay = "";
+    prevNumTwoDisplay = "";
+    prevOperator = "";
+    prevResultDisplay = "";
+    morePrevNumOneDisplay = "";
+    morePrevNumTwoDisplay = "";
+    morePrevOperator = "";
+    morePrevResultDisplay = "";
     _addToNumOne = true;
     notifyListeners();
   }
