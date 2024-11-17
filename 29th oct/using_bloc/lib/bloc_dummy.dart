@@ -32,7 +32,7 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
     on<FetchProducts>(onFetchProducts);
   }
 
-  Future<void> onFetchProducts( FetchProducts event, Emitter<ProductState> emit) async {
+  Future<void> onFetchProducts(FetchProducts event, Emitter<ProductState> emit) async {
     emit(ProductLoading());
     try {
       List<ProductsModel> products = await getProducts();
