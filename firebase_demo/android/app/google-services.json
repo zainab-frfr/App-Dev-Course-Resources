@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "359427641561",
+    "project_id": "ibacourse-d1cef",
+    "storage_bucket": "ibacourse-d1cef.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:359427641561:android:e3e2cdeaca5aa9aba62ec8",
+        "android_client_info": {
+          "package_name": "com.example.firebase_demo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhhp-Qp6OOkdKEduymTxMN8l1avig9klo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

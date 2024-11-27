@@ -27,6 +27,8 @@ class MyHomePage extends StatelessWidget {
                   )),
             );
           case FetchedNews():
+            debugPrint('fetched news');
+            debugPrint('${state.allNews.length}');
             return ListView.builder(
                 itemCount: state.allNews.length,
                 itemBuilder: (context, index) {
@@ -47,7 +49,7 @@ class MyHomePage extends StatelessWidget {
               ),
             );
           default:
-            return Container();
+            return const Center(child: Text('UNRECOGNIZED STATE'),);
         }
       },
     );
